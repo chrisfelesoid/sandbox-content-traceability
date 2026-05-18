@@ -1,0 +1,14 @@
+[tools]
+python = "3.14.5"
+uv     = "0.11.14"
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+
+[tasks.gen-key]
+run = """
+KEY=key/test.key
+if [ ! -e $KEY ];then
+  audiowmark gen-key $KEY
+fi
+"""

@@ -1,0 +1,11 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Download audiowmark source code"
+set -e
+
+NAME=$(basename "$0")
+ROOT=$(pwd)
+SRC_DIR=${ROOT}/audio/tools/${NAME}
+SRC_URL="https://github.com/swesterfeld/audiowmark.git"
+
+mkdir -p ${SRC_DIR}
+git clone ${SRC_URL} ${SRC_DIR}

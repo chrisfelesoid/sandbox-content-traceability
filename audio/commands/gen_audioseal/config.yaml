@@ -1,0 +1,33 @@
+source_path: &source_path ../../datasets/source
+watermarked_path: &watermarked_path ../../datasets/watermarked/audioseal
+benchmark_path: &benchmark_path ../../benchmark/audioseal
+body: &body "5445"
+body_type: &body_type hex
+encode:
+  input: *source_path
+  output: *watermarked_path
+  body: *body
+  body_type: *body_type
+  generator_path: ../../models/audioseal/generator_base.pth
+  device: cuda
+  # watermark strength
+  alpha: 1.0
+  # original: preserve source audio quality; watermark: preserve watermark fidelity
+  preserve: watermark
+  # chunk size in milliseconds for sequential processing (0 = no chunking)
+  chunk: 0
+  parity_bits: 2
+decode:
+  input: *watermarked_path
+  detector_path: ../../models/audioseal/detector_base.pth
+  device: cuda
+  chunk: 0
+  parity_bits: 2
+  threshold: 0.95
+benchmark:
+  source_dir: *source_path
+  watermarked_dir: *watermarked_path
+  benchmark_dir: *benchmark_path
+  scenarios:
+    - name: mp3_loop
+      bitrates: [128, 96, 64, 48, 32]

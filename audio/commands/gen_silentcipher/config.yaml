@@ -1,0 +1,34 @@
+source_path: &source_path ../../datasets/source
+watermarked_path: &watermarked_path ../../datasets/watermarked/silentcipher
+benchmark_path: &benchmark_path ../../benchmark/silentcipher
+body: &body "04d7a16944"
+body_type: &body_type hex
+ckpt_path: &ckpt_path ../../models/silentcipher/44_1_khz/73999_iteration
+config_path: &config_path ../../models/silentcipher/44_1_khz/73999_iteration/hparams.yaml
+encode:
+  input: *source_path
+  output: *watermarked_path
+  body: *body
+  body_type: *body_type
+  model_type: "44.1k"
+  device: cpu
+  ckpt_path: *ckpt_path
+  config_path: *config_path
+  sdr: null
+  parity_bits: 0
+decode:
+  input: *watermarked_path
+  model_type: "44.1k"
+  device: cpu
+  ckpt_path: *ckpt_path
+  config_path: *config_path
+  phase_shift_decoding: false
+  parity_bits: 0
+  threshold: 0.8
+benchmark:
+  source_dir: *source_path
+  watermarked_dir: *watermarked_path
+  benchmark_dir: *benchmark_path
+  scenarios:
+    - name: mp3_loop
+      bitrates: [128, 96, 64, 48, 32]

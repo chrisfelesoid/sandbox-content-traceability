@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "name": "ROOT",
+      "path": "."
+    },
+    {
+      "name": "AUDIOSEAL",
+      "path": "audio/commands/gen_audioseal"
+    },
+    {
+      "name": "AUDIOWMARK",
+      "path": "audio/commands/gen_audiowmark"
+    },
+    {
+      "name": "SILENTCIPHER",
+      "path": "audio/commands/gen_silentcipher"
+    },
+    {
+      "name": "COMMON",
+      "path": "common"
+    }
+  ],
+  "settings": {
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
+      "editor.formatOnSave": true
+    },
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+          "source.fixAll.ruff": "explicit",
+          "source.organizeImports.ruff": "explicit"
+      },
+    },
+    "ruff.path": ["mise", "exec", "--", "ruff"],
+    "ruff.configuration": "${workspaceFolder}/ruff.toml",
+    "evenBetterToml.taplo.configFile.path": "${workspaceFolder}/taplo.toml",
+  }
+}

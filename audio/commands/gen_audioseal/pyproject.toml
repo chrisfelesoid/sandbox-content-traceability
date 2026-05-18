@@ -1,0 +1,31 @@
+[project]
+dependencies = [
+  "common",
+  "audioseal>=0.2.0",
+  "torch==2.10.0",
+  "torchaudio==2.10.0",
+  "torchcodec==0.10.0",
+  "torchvision==0.25.0",
+  "pyyaml>=6.0.3",
+]
+name = "gen-audioseal"
+requires-python = ">=3.14"
+version = "0.1.0"
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[[tool.uv.index]]
+explicit = true
+name     = "torch-cu130"
+url      = "https://download.pytorch.org/whl/cu130"
+
+[tool.uv.sources]
+common      = { path = "../../../common", editable = true }
+torch       = [{ index = "torch-cu130" }]
+torchaudio  = [{ index = "torch-cu130" }]
+torchcodec  = [{ index = "torch-cu130" }]
+torchvision = [{ index = "torch-cu130" }]

@@ -1,0 +1,13 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Build audioseal"
+set -e
+
+NAME=$(basename "$0")
+ROOT=$(pwd)
+BASE_DIR=${ROOT}/audio/tools/${NAME}
+
+cd ${BASE_DIR}
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -e .

@@ -1,0 +1,41 @@
+default_stages: [pre-commit]
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: Detect hardcoded secrets
+        entry: mise exec -- gitleaks protect --verbose --redact --staged
+        language: system
+        pass_filenames: false
+
+      - id: ruff-check
+        name: ruff check
+        entry: mise exec -- ruff check --fix
+        language: system
+        types: [python]
+
+      - id: ruff-format
+        name: ruff format
+        entry: mise exec -- ruff format
+        language: system
+        types: [python]
+        require_serial: true
+
+      - id: taplo-lint
+        name: taplo lint
+        entry: mise exec -- taplo lint
+        language: system
+        types: [toml]
+
+      - id: taplo-format
+        name: taplo format
+        entry: mise exec -- taplo format
+        language: system
+        types: [toml]
+        require_serial: true
+
+      - id: editorconfig-check
+        name: editorconfig check
+        entry: mise exec -- ec
+        language: system
+        types: [text]

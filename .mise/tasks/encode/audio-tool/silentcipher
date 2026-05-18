@@ -1,0 +1,11 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Embed watermarks using silentcipher"
+
+set -e
+
+NAME=$(basename "$0")
+GEN_NAME=gen_${NAME}
+ROOT=$(pwd)
+COMMAND_DIR=${ROOT}/audio/commands/${GEN_NAME}
+
+mise exec -C ${COMMAND_DIR} -- uv run -m ${GEN_NAME}.encode

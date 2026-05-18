@@ -1,0 +1,7 @@
+include        = ["audio/commands/**/*.py", "common/**/*.py"]
+target-version = "py311"
+
+[lint]
+ignore = ["E501"]
+
+select = ["E", "F", "I"]

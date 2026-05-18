@@ -1,0 +1,15 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Download silentcipher source code and AI models"
+set -e
+
+NAME=$(basename "$0")
+ROOT=$(pwd)
+SRC_DIR=${ROOT}/audio/tools/${NAME}
+SRC_URL="https://github.com/sony/silentcipher.git"
+MODEL_DIR=${ROOT}/audio/models/${NAME}
+MODEL_URL="https://huggingface.co/Sony/SilentCipher"
+
+mkdir -p ${SRC_DIR}
+git clone ${SRC_URL} ${SRC_DIR}
+
+git clone ${MODEL_URL} ${MODEL_DIR}

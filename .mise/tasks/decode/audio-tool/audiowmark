@@ -1,0 +1,13 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Detect watermarks using audiowmark"
+
+set -e
+
+NAME=$(basename "$0")
+GEN_NAME=gen_${NAME}
+ROOT=$(pwd)
+COMMAND_DIR=${ROOT}/audio/commands/${GEN_NAME}
+
+mise run -C ${COMMAND_DIR} gen-key
+
+mise exec -C ${COMMAND_DIR} -- uv run -m ${GEN_NAME}.decode

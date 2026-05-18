@@ -1,0 +1,9 @@
+{
+  "name": "sandbox-content-traceability",
+  "dockerComposeFile": ["./compose.yaml"],
+  "service": "sandbox-content-traceability",
+  "runServices": ["sandbox-content-traceability"],
+  "workspaceFolder": "/workspace",
+  "remoteUser": "appuser",
+  "postCreateCommand": "mise trust -a && mise install"
+}

@@ -1,0 +1,27 @@
+source_path: &source_path ../../datasets/source
+watermarked_path: &watermarked_path ../../datasets/watermarked/audiowmark
+benchmark_path: &benchmark_path ../../benchmark/audiowmark
+body: &body "04d7a16944914b4e8f58842a9ee5d557"
+body_type: &body_type hex
+encode:
+  input: *source_path
+  output: *watermarked_path
+  body: *body
+  body_type: *body_type
+  key: ./key/test.key
+  strength: null
+  parity_bits: 2
+decode:
+  input: *watermarked_path
+  key: ./key/test.key
+  detect_speed: false
+  detect_speed_patient: false
+  parity_bits: 2
+  threshold: 1.0
+benchmark:
+  source_dir: *source_path
+  watermarked_dir: *watermarked_path
+  benchmark_dir: *benchmark_path
+  scenarios:
+    - name: mp3_loop
+      bitrates: [128, 96, 64, 48, 32]

@@ -1,0 +1,30 @@
+[project]
+dependencies = [
+  "common",
+  "numpy<2",
+  "pyyaml>=6.0.3",
+  "silentcipher>=1.0.5",
+  "torch==2.0.0",
+  "torchaudio==2.0.1",
+  "torchvision==0.15.1",
+]
+name = "gen-silentcipher"
+requires-python = ">=3.11"
+version = "0.1.0"
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[[tool.uv.index]]
+explicit = true
+name     = "torch-cu118"
+url      = "https://download.pytorch.org/whl/cu118"
+
+[tool.uv.sources]
+common      = { path = "../../../common", editable = true }
+torch       = [{ index = "torch-cu118" }]
+torchaudio  = [{ index = "torch-cu118" }]
+torchvision = [{ index = "torch-cu118" }]

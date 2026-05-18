@@ -1,0 +1,12 @@
+#!/usr/bin/env -S bash
+# [MISE] description="Build audiowmark"
+set -e
+
+NAME=$(basename "$0")
+ROOT=$(pwd)
+BASE_DIR=${ROOT}/audio/tools/${NAME}
+
+cd ${BASE_DIR}
+./autogen.sh --prefix=$HOME/.local
+make
+make install

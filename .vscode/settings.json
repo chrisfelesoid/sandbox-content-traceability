@@ -1,0 +1,17 @@
+{
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+  },
+  "ruff.path": ["mise", "exec", "--", "ruff"],
+  "evenBetterToml.taplo.bundled": false,
+  "evenBetterToml.taplo.path": "/home/appuser/.local/share/mise/installs/taplo/0.10.0/taplo"
+}
