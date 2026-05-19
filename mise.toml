@@ -1,6 +1,6 @@
 [settings]
 npm.package_manager  = "pnpm"
-trusted_config_paths = ["./"]
+trusted_config_paths = ["/workspace"]
 
 [tools]
 node   = "24.15.0"
