@@ -1,6 +1,8 @@
 exclude = [
+  "**/.venv/**",
   "audio/tools/**/*.toml",
 ]
+include = ["**/*.toml"]
 
 [formatting]
 align_entries       = true

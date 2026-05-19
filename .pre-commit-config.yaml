@@ -12,12 +12,14 @@ repos:
         name: ruff check
         entry: mise exec -- ruff check --fix
         language: system
+        pass_filenames: false
         types: [python]
 
       - id: ruff-format
         name: ruff format
         entry: mise exec -- ruff format
         language: system
+        pass_filenames: true
         types: [python]
         require_serial: true
 
@@ -25,12 +27,14 @@ repos:
         name: taplo lint
         entry: mise exec -- taplo lint
         language: system
+        pass_filenames: true
         types: [toml]
 
       - id: taplo-format
         name: taplo format
         entry: mise exec -- taplo format
         language: system
+        pass_filenames: true
         types: [toml]
         require_serial: true
 
@@ -38,4 +42,5 @@ repos:
         name: editorconfig check
         entry: mise exec -- ec
         language: system
+        pass_filenames: true
         types: [text]
