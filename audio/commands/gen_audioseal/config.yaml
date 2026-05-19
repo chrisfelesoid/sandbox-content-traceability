@@ -36,3 +36,10 @@ benchmark:
         semitones: [-4, -2, -1, 1, 2, 4]
       time_stretch:
         speed_ratios: [0.75, 0.9, 0.95, 1.05, 1.1, 1.25]
+    - name: single_pass
+      mp3:
+        bitrates_kbps: [32, 64, 96, 128, 192, 320]
+      resample:
+        sample_rates: [8000, 16000, 22050, 44100]
+      noise:
+        snr_db: [10, 20, 30, 40]
