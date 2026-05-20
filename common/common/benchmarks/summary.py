@@ -19,6 +19,7 @@ def compute_summary(records: list[dict]) -> list[dict]:
 
     key_fields = _group_keys(records)
     includes_file = "file" in key_fields
+    has_scenario_key = "scenario" in key_fields
 
     def sort_key(r: dict) -> tuple:
         return tuple(str(r.get(k, "")) for k in key_fields)
@@ -33,7 +34,9 @@ def compute_summary(records: list[dict]) -> list[dict]:
         group = list(group_iter)
         entry: dict = dict(zip(key_fields, key))
 
-        if includes_file:
+        use_iteration_metrics = has_scenario_key or "iteration" in group[0]
+
+        if includes_file and use_iteration_metrics:
             if "iteration" in group[0]:
                 indexed = [(r["iteration"], r) for r in group]
             else:
@@ -54,6 +57,14 @@ def compute_summary(records: list[dict]) -> list[dict]:
                     "mean_score": mean_score,
                 }
             )
+
+            if "remaining_ms" in group[0]:
+                if first_failure is not None:
+                    ffr = [r for idx, r in indexed if idx == first_failure]
+                    ffr_ms = ffr[0].get("remaining_ms") if ffr else None
+                else:
+                    ffr_ms = None
+                entry["first_failure_remaining_ms"] = ffr_ms
         else:
             successful_r = [r for r in group if r.get("status")]
             scores = [r["score"] for r in successful_r if r.get("score") is not None]

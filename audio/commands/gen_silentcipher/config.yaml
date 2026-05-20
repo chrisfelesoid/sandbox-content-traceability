@@ -44,3 +44,6 @@ benchmark:
         sample_rates: [8000, 16000, 22050, 44100]
       noise:
         snr_db: [10, 20, 30, 40]
+    - name: trim
+      step_ms: 500
+      max_iterations: 100
