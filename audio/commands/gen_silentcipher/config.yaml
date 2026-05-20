@@ -47,3 +47,5 @@ benchmark:
     - name: trim
       step_ms: 500
       max_iterations: 100
+    - name: volume
+      volume_dbs: [-20, -15, -10, -6, -3, 3, 6]
