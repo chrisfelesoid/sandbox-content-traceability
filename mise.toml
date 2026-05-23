@@ -12,6 +12,7 @@ ffmpeg                        = "8.1.1"
 
 # checker
 "aqua:astral-sh/ruff"                            = "0.15.13"
+"aqua:biomejs/biome"                             = "2.4.15"
 "aqua:editorconfig-checker/editorconfig-checker" = "3.6.1"
 "aqua:gitleaks/gitleaks"                         = "8.30.1"
 pre-commit                                       = { version = "4.6.0", postinstall = "mise generate git-pre-commit -w --task=pre-commit" }

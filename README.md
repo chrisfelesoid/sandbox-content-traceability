@@ -137,6 +137,13 @@ TODO
 
 Put your datasets `datasets/source/`
 
+## install hook
+
+```
+mise generate git-pre-commit -w --task=pre-commit
+```
+
+
 ### Commands
 
 - `mise run download:*`: Download the library source code

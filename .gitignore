@@ -323,3 +323,7 @@ audio/*
 !audio/commands
 
 AGENTS.local.md
+
+
+node_modules
+.pnpm-store

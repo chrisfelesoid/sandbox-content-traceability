@@ -44,3 +44,10 @@ repos:
         language: system
         pass_filenames: true
         types: [text]
+
+      - id: biome-check
+        name: biome check
+        entry: mise exec -- biome check
+        language: system
+        pass_filenames: true
+        files: \.(js|jsx|ts|tsx)$
