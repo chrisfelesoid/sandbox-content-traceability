@@ -2,6 +2,13 @@
 
 Evaluating digital watermarking solutions for content traceability: A unified verification environment (A personal study).
 
+> **Note:** This project relies on freely available libraries for verification purposes. For production use, it is highly recommended to consider premium or commercial watermarking solutions that offer higher quality and better reliability.
+
+
+## Background
+
+With the rise of advanced generative AI, ensuring content authenticity and traceability has become a critical challenge. Recent legislative frameworks, such as the **TAKE IT DOWN Act**, underscore the urgent need for robust mechanisms to regulate and combat the proliferation of unauthorized or non-consensual digital content. To comply with such evolving legal requirements and protect digital integrity, implementation of reliable content traceability is more essential than ever. This repository focuses on evaluating digital watermarking as a key technological solution to fulfill these traceability demands.
+
 
 ## Use case
 
@@ -132,11 +139,11 @@ Put your datasets `datasets/source/`
 
 ### Commands
 
-- `mise run download:*`
-- `mise run build:*`
-- `mise run encode:*`
-- `mise run decode:*`
-- `mise run benchmark:*`
+- `mise run download:*`: Download the library source code
+- `mise run build:*`: Build the libraries
+- `mise run encode:*`: Embed watermarks into content
+- `mise run decode:*`: Extract embedded watermarks
+- `mise run benchmark:*`: Benchmark the robustness of embedded watermarks
 
 
 ### Switching CUDA Versions via Command Line
