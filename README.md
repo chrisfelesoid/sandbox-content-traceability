@@ -139,11 +139,11 @@ Put your datasets `datasets/source/`
 
 ### Commands
 
-- `mise run download:*`
-- `mise run build:*`
-- `mise run encode:*`
-- `mise run decode:*`
-- `mise run benchmark:*`
+- `mise run download:*`: Download the library source code
+- `mise run build:*`: Build the libraries
+- `mise run encode:*`: Embed watermarks into content
+- `mise run decode:*`: Extract embedded watermarks
+- `mise run benchmark:*`: Benchmark the robustness of embedded watermarks
 
 
 ### Switching CUDA Versions via Command Line
