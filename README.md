@@ -53,8 +53,6 @@ The table below outlines the minimum payload size required to support each use c
 | **2**    | Content Leakage & Distribution Tracking | **40 bits**           |
 | **3**    | AI-Generated Content Identification     | **16 bits**           |
 
-Note:
-
 
 ### 16-Bit Watermark Payload Example Specification
 
