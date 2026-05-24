@@ -22,6 +22,11 @@ export function LazyMedia({
   const [visible, setVisible] = useState(false);
   const [errored, setErrored] = useState(false);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: reset errored when src changes
+  useEffect(() => {
+    setErrored(false);
+  }, [src]);
+
   useEffect(() => {
     if (!ref.current) return;
     const io = new IntersectionObserver(

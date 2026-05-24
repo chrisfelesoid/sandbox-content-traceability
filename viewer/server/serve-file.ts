@@ -44,8 +44,17 @@ export async function serveFile(
   if (range) {
     const m = /bytes=(\d*)-(\d*)/.exec(range);
     if (m) {
-      const start = m[1] ? Number.parseInt(m[1], 10) : 0;
-      const end = m[2] ? Number.parseInt(m[2], 10) : info.size - 1;
+      let start: number;
+      let end: number;
+      if (m[1] === '' && m[2] !== '') {
+        // suffix-length: last N bytes
+        const suffix = Number.parseInt(m[2], 10);
+        start = Math.max(0, info.size - suffix);
+        end = info.size - 1;
+      } else {
+        start = m[1] ? Number.parseInt(m[1], 10) : 0;
+        end = m[2] ? Number.parseInt(m[2], 10) : info.size - 1;
+      }
       if (start >= info.size || end >= info.size || start > end) {
         res.statusCode = 416;
         res.setHeader('Content-Range', `bytes */${info.size}`);

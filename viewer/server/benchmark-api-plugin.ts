@@ -51,8 +51,13 @@ export async function handleApi(
           }
         }
         jsonResponse(res, 200, { rows: result.rows });
-      } catch {
-        jsonResponse(res, 200, { rows: [] });
+      } catch (e) {
+        if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
+          jsonResponse(res, 200, { rows: [] });
+        } else {
+          console.error(`[benchmark-api] failed to read ${rel}:`, e);
+          jsonResponse(res, 500, { error: 'failed to read results' });
+        }
       }
       return true;
     }
