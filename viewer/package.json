@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:integrity": "vitest run src/tests/integrity.test.ts"
+    "test:integrity": "vitest run --config vitest.integrity.config.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
