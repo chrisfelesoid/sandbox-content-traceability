@@ -1,4 +1,4 @@
-# sandbox-ai-traceability
+# sandbox-content-traceability
 
 Evaluating digital watermarking solutions for content traceability: A unified verification environment (A personal study).
 
