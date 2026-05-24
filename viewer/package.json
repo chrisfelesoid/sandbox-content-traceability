@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integrity": "vitest run src/tests/integrity.test.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
