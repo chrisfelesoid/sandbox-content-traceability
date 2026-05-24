@@ -9,7 +9,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
       "source.organizeImports.ruff": "explicit"
-    },
+    }
   },
   "ruff.path": ["mise", "exec", "--", "ruff"],
   "evenBetterToml.taplo.bundled": false,

@@ -1,0 +1,6 @@
+[settings]
+npm.package_manager = "pnpm"
+
+[tools]
+node = "24.15.0"
+pnpm = "10.33.0"

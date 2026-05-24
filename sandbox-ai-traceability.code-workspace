@@ -19,6 +19,10 @@
     {
       "name": "COMMON",
       "path": "common"
+    },
+    {
+      "name": "VIEWER",
+      "path": "viewer"
     }
   ],
   "settings": {
@@ -30,12 +34,12 @@
       "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
-          "source.fixAll.ruff": "explicit",
-          "source.organizeImports.ruff": "explicit"
-      },
+        "source.fixAll.ruff": "explicit",
+        "source.organizeImports.ruff": "explicit"
+      }
     },
     "ruff.path": ["mise", "exec", "--", "ruff"],
     "ruff.configuration": "${workspaceFolder}/ruff.toml",
-    "evenBetterToml.taplo.configFile.path": "${workspaceFolder}/taplo.toml",
+    "evenBetterToml.taplo.configFile.path": "${workspaceFolder}/taplo.toml"
   }
 }
